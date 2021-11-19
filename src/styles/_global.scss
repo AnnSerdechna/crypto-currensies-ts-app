@@ -37,3 +37,13 @@ h1 {
 ul {
   list-style-image: url("../images/clock.png");
 }
+
+.button {
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  border: 5px solid blue;
+  color: blue;
+  background-color: transparent;
+  border-radius: 12px;
+}

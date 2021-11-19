@@ -1,5 +1,16 @@
 import "./styles/style.scss";
 
+const btn: any = document.querySelector(".button");
+const section: any = document.querySelector(".section");
+
+let count = 0;
+
+btn.addEventListener("click", () => {
+  section.innerHTML = `
+    <p>${count++}</p>
+  `
+})
+
 const myAge: number = 33;
 
 console.log('[myAge]', myAge);
