@@ -1,7 +1,26 @@
+let mode = "development";
+
+if (process.env.NODE_ENV === "production") {
+  mode = "production";
+}
+
 module.exports = {
-  mode: process.env.NODE_ENV || "production",
+  mode: mode,
+
+  devServer: {
+    static: "./dist",
+    hot: true,
+  },
+
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
@@ -12,7 +31,7 @@ module.exports = {
     ],
   },
 
-  devtool: false,
+  devtool: "source-map",
 
   resolve: {
     extensions: [".ts", ".js"],

@@ -1,5 +1,8 @@
 const myAge: number = 33;
 
+console.log('[myAge]', myAge);
+
+
 const obj = {
   one: {
     two: {
@@ -15,4 +18,4 @@ function woof(noise: any) {
   
 }
 
-woof(null);
+woof(obj);
