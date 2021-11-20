@@ -1,0 +1,13 @@
+.Input {
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 2px;
+
+    &:focus {
+        border-color: blue;
+
+        &::placeholder {
+            color: blue;
+        }
+    }
+}

@@ -12,22 +12,24 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   mode: mode,
-
+  
   output: {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "images/[hash][ext][query]",
   },
 
   // FIXME
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
+  // performance: {
+  //   hints: false,
+  //   maxEntrypointSize: 512000,
+  //   maxAssetSize: 512000,
+  // },
 
   devServer: {
     static: "./dist",
     hot: true,
+    compress: false,
+    port: 3000,
   },
 
   module: {
@@ -69,7 +71,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/template.html",
     }),
   ],
 

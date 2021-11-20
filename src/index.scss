@@ -1,0 +1,35 @@
+$text: #333;
+
+%base {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  @extend %base;
+  color: $text;
+  
+  &::before,
+  &::after {
+      @extend %base;
+  }
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
