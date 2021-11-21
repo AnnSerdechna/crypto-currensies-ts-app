@@ -1,6 +1,10 @@
 import Button from "../UI/Button/Button";
 import "./Pagination.scss";
 
+interface Pagination {
+  pagination: any;
+}
+
 class Pagination {
   constructor() {
     this.pagination = document.createElement("div");

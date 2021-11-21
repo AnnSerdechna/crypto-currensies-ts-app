@@ -1,5 +1,9 @@
 import "./Select.scss";
 
+interface Select {
+  select: any;
+}
+
 class Select {
   constructor() {
     this.select = document.createElement("select");

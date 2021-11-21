@@ -2,6 +2,10 @@ import Input from "../UI/Input/Input";
 import Select from "../UI/Select/Select";
 import "./CoinsConverter.scss";
 
+interface CoinsConverter {
+  coinsConverter: any;
+}
+
 class CoinsConverter {
   constructor() {
     this.coinsConverter = document.createElement("form");

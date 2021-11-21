@@ -1,8 +1,16 @@
 import axios from "axios";
 import millify from "millify";
-
 import CoinsTable from "../CoinsTable/CoinsTable";
 import "./DataCoins.scss";
+
+interface DataCoins {
+  dataCoins: any;
+}
+
+//FIXME
+interface ICoins {
+  name: string;
+}
 
 class DataCoins {
   constructor() {

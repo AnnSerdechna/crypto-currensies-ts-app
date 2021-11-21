@@ -18,14 +18,14 @@
       padding: 0.3rem 1rem;
     }
 
-    td {
-      transition: all 300ms;
+    // td {
+    //   transition: all 300ms;
 
-      &:hover {
-        box-shadow: 0 0 10px rgba(blueviolet, 0.2);
-        border-color: blueviolet;
-      }
-    }
+    //   &:hover {
+    //     box-shadow: 0 0 10px rgba(blueviolet, 0.2);
+    //     // border-color: transparent;
+    //   }
+    // }
 
     span {
       display: flex;
