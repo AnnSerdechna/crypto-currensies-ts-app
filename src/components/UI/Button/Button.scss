@@ -1,4 +1,21 @@
 .Button {
   font-size: 20px;
-  border-radius: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #999;
+  background-color: #fff;
+  transition: all 300ms;
+  cursor: pointer;
+  outline-color: blueviolet;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:hover {
+    color: blueviolet;
+    border-color: blueviolet;
+    box-shadow: 0 0 10px rgba(blueviolet, 0.2);
+  }
 }

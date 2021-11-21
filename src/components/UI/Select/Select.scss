@@ -1,0 +1,47 @@
+.Select {
+  min-width: 300px;
+  // margin: 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #8b8b8b;
+  outline: none;
+  appearance: none;
+  background: url(https://img.icons8.com/carbon-copy/2x/coins.png) 96% / 15%
+    no-repeat;
+  cursor: pointer;
+  color: blueviolet;
+  text-transform: capitalize;
+  transition: all 300ms;
+
+  &:focus {
+    border-color: blueviolet;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(blueviolet, 0.2);
+    border-color: transparent;
+  }
+
+  option {
+    text-transform: capitalize;
+  }
+
+  option:nth-child(odd) {
+    background-color: #e9e4ee;
+  }
+}
+
+/* CAUTION: IE hackery ahead */
+.Select::-ms-expand {
+  display: none; /* remove default arrow on ie10 and ie11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width: 0\0) {
+  .Select {
+    background: none\9;
+    padding: 5px\9;
+  }
+}

@@ -1,4 +1,5 @@
-import "./CoinsTable.css";
+import Pagination from "../Pagination/Pagination";
+import "./CoinsTable.scss";
 
 // const filteredData = cryptosList?.data?.coins.filter((coin) =>
 //       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -39,6 +40,8 @@ class CoinsTable {
 				<tbody>${table}</tbody>
 			</table>
 		`.replace(/,/g, "");
+
+		this.coinsTable.append(new Pagination)
 
     return this.coinsTable;
   }

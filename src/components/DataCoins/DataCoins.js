@@ -1,6 +1,7 @@
 import axios from "axios";
 import millify from "millify";
 import CoinsTable from "../CoinsTable/CoinsTable";
+import Pagination from "../Pagination/Pagination";
 import "./DataCoins.scss";
 
 class DataCoins {
