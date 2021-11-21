@@ -41,7 +41,9 @@ class CoinsTable {
 			</table>
 		`.replace(/,/g, "");
 
-		this.coinsTable.append(new Pagination)
+    this.coinsTable.append(
+      new Pagination(),
+    );
 
     return this.coinsTable;
   }

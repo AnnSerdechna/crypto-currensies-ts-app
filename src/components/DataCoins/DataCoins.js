@@ -1,7 +1,7 @@
 import axios from "axios";
 import millify from "millify";
+
 import CoinsTable from "../CoinsTable/CoinsTable";
-import Pagination from "../Pagination/Pagination";
 import "./DataCoins.scss";
 
 class DataCoins {
@@ -22,7 +22,7 @@ class DataCoins {
           "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD"
         )
         .then((res) => {
-          console.log('[res]', res);
+          console.log('[res]', res.data.MetaData.Count);
           
           const data = res.data.Data;
           const coins = data.map((coin) => {
