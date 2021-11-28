@@ -5,11 +5,10 @@ import "./CoinsTable.scss";
 //       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
 //     );
 
-interface CoinsTable {
-  coinsTable: any;
-}
 
 class CoinsTable {
+	coinsTable: HTMLDivElement;
+
   constructor(coins: any[]) {
     //FIXME
     this.coinsTable = document.createElement("div");
@@ -46,9 +45,9 @@ class CoinsTable {
 			</table>
 		`.replace(/,/g, "");
 
-    this.coinsTable.append(new Pagination());
+    (<any>this.coinsTable).append(new Pagination);
 
-    return this.coinsTable;
+    return this.coinsTable as any;
   }
 }
 

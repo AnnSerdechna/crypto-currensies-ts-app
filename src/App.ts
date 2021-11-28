@@ -1,23 +1,18 @@
 import "./App.scss";
 import CoinsConverter from "./components/CoinsConverter/CoinsConverter";
-import DataCoins from './components/DataCoins/DataCoins';
-
-interface App {
-  app: any;
-}
+import DataCoins from "./components/DataCoins/DataCoins";
 
 class App {
+  app: HTMLDivElement;
+
   constructor() {
     this.app = document.createElement("div");
 
     this.app.className = "App";
 
-    this.app.append(new DataCoins, new CoinsConverter);
+    (<any>this.app).append(new DataCoins(), new CoinsConverter());
 
-    console.log('[typeof this.app]', typeof this.app);
-    
-
-    return this.app;
+    return this.app as any;
   }
 }
 

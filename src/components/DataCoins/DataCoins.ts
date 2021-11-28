@@ -1,47 +1,46 @@
 import axios from "axios";
 import millify from "millify";
+import { ICoin, IData } from "../../types/data";
 import CoinsTable from "../CoinsTable/CoinsTable";
 import "./DataCoins.scss";
 
-interface DataCoins {
-  dataCoins: any;
-}
-
-//FIXME
-interface ICoins {
-  name: string;
+interface IDataCoins {
+  className: string;
 }
 
 class DataCoins {
+  dataCoins: IDataCoins;
+
   constructor() {
     this.dataCoins = document.createElement("div");
 
+    console.log("[this.dataCoins]", this.dataCoins);
+
     this.dataCoins.className = "DataCoins";
 
-    DataCoins.render(this.dataCoins);
-
-    return this.dataCoins;
+    DataCoins.render();
+    // FIXME
+    return this.dataCoins as any;
   }
 
   static render() {
     const fetchData = () => {
       axios
         .get(
-          "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD"
+          "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD",
         )
         .then((res) => {
-          console.log('[res]', res.data.MetaData.Count);
-          
           const data = res.data.Data;
-          const coins = data.map((coin) => {
-            const obj = {
+
+          const coins = data.map((coin: IData) => {
+            const obj: ICoin = {
               name: coin.CoinInfo.Name,
               fullName: coin.CoinInfo.FullName,
               imageUrl: `https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`,
               price: coin.RAW.USD.PRICE,
               change24h: +coin.DISPLAY.USD.CHANGEPCT24HOUR,
               volume24Hour: millify(coin.RAW.USD.VOLUME24HOUR),
-              icon: coin.DISPLAY.USD.FROMSYMBOL
+              icon: coin.DISPLAY.USD.FROMSYMBOL,
             };
             return obj;
           });
@@ -52,7 +51,7 @@ class DataCoins {
 
           let dataList = new CoinsTable(coins);
 
-          if  (dataComponent) {
+          if (dataComponent) {
             where = dataComponent;
 
             where.innerHTML = "";
@@ -60,7 +59,7 @@ class DataCoins {
             where = location;
           }
 
-          where.append(dataList);
+          (<any>where).append(dataList);
         });
     };
     fetchData();

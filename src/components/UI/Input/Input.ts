@@ -1,32 +1,30 @@
-import './Input.scss';
+import "./Input.scss";
 
-interface Input {
-    input: any;
-  }
-  
-  interface Constructor {
-    type: string;
-    placeholder: string;
-    name?: string;
-  }
+interface Constructor {
+  type?: string;
+  placeholder?: string;
+  name?: string;
+}
 
 class Input {
-    constructor({ type = 'text', placeholder, name }: Constructor) {
-        this.input = document.createElement('input');
+  input: HTMLInputElement;
 
-        this.input.className = 'Input';
-        this.input.type = type;
+  constructor({ type = "text", placeholder, name }: Constructor) {
+    this.input = document.createElement("input");
 
-        if (name) {
-            this.input.name = name;
-        }
+    this.input.className = "Input";
+    this.input.type = type;
 
-        if (placeholder) {
-            this.input.placeholder = placeholder;
-        }
-
-        return this.input;
+    if (name) {
+      this.input.name = name;
     }
+
+    if (placeholder) {
+      this.input.placeholder = placeholder;
+    }
+
+    return this.input as any;
+  }
 }
 
 export default Input;

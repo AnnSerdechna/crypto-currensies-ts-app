@@ -2,23 +2,20 @@ import Input from "../UI/Input/Input";
 import Select from "../UI/Select/Select";
 import "./CoinsConverter.scss";
 
-interface CoinsConverter {
-  coinsConverter: any;
-}
-
 class CoinsConverter {
+  coinsConverter: HTMLFormElement;
   constructor() {
     this.coinsConverter = document.createElement("form");
 
     this.coinsConverter.className = "CoinsConverter";
 
-    this.coinsConverter.append(
+    (<any>this.coinsConverter).append(
       new Input({ type: "number", placeholder: "$ 1" }),
       new Select,
       new Select,
     );
 
-    return this.coinsConverter;
+    return this.coinsConverter as any;
   }
 }
 

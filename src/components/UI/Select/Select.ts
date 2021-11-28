@@ -1,10 +1,7 @@
 import "./Select.scss";
 
-interface Select {
-  select: any;
-}
-
 class Select {
+  select: HTMLSelectElement;
   constructor() {
     this.select = document.createElement("select");
 
@@ -17,7 +14,7 @@ class Select {
       <option value="data">data currencies</option>  
     `;
 
-    return this.select;
+    return this.select as any;
   }
 }
 

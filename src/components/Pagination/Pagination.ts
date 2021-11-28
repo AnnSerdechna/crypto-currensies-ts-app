@@ -1,22 +1,21 @@
 import Button from "../UI/Button/Button";
 import "./Pagination.scss";
 
-interface Pagination {
-  pagination: any;
-}
-
 class Pagination {
+  pagination: HTMLDivElement;
+
   constructor() {
     this.pagination = document.createElement("div");
 
     this.pagination.className = "Pagination";
 
-    this.pagination.append(new Button({ text: "<<" }), new Button({ text: ">>" }));
+    (<any>this.pagination).append(
+      new Button({ text: "<<" }),
+      new Button({ text: ">>" }),
+    );
 
-    return this.pagination;
+    return this.pagination as any;
   }
 }
 
 export default Pagination;
-
-
